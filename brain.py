@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 
-from GreyMatter import general_conversations
+from GreyMatter import general_conversations, tell_time
 
 def brain(name, speech_text):
     def check_message(check):
@@ -31,6 +31,9 @@ def brain(name, speech_text):
         
     elif check_message(['how', 'are', 'you']):
         general_conversations.how_are_you()
+        
+    elif check_message(['time']):
+        tell_time.what_is_time()
         
     else:
         general_conversations.undefined()
