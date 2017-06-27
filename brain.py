@@ -1,8 +1,8 @@
 #!/usr/bin/env python2
 
-from GreyMatter import general_conversations, tell_time
+from GreyMatter import general_conversations, tell_time, weather
 
-def brain(name, speech_text):
+def brain(name, speech_text, city_name, city_code):
     def check_message(check):
         """
         This function checks if the items in the list (specified in
@@ -34,6 +34,9 @@ def brain(name, speech_text):
         
     elif check_message(['time']):
         tell_time.what_is_time()
+        
+    elif check_message(['how', 'weather']) or check_message(['hows', 'weather']):
+        weather.weather(city_name, city_code)
         
     else:
         general_conversations.undefined()
